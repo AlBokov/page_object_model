@@ -13,3 +13,9 @@ def test_login_pass(browser):
     page.open()
     page.login("standard_user", "secret_sauce")
     assert "Products" in page.get_pass_login()
+
+def test_login_block(browser):
+    page = LoginPage(browser)
+    page.open()
+    page.login("locked_out_user", "secret_sauce")
+    assert "Sorry, this user has been locked out." in page.get_error_message()

@@ -1,6 +1,6 @@
 import pytest
 from selenium import webdriver
-from pages.pages import LoginPage
+
 
 @pytest.fixture
 def browser():
